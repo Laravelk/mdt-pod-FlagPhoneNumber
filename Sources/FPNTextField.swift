@@ -240,6 +240,8 @@ open class FPNTextField: UITextField, FPNCountryPickerDelegate, FPNDelegate {
 		let cleanedPhoneNumber: String = clean(string: phoneNumber)
 
 		if let validPhoneNumber = getValidNumber(phoneNumber: cleanedPhoneNumber) {
+			nbPhoneNumber = validPhoneNumber
+			
 			if validPhoneNumber.italianLeadingZero {
 				text = "0\(validPhoneNumber.nationalNumber.stringValue)"
 			} else {
